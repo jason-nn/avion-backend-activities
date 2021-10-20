@@ -16,10 +16,7 @@ puts(is_perfect_square(4))
 puts(is_perfect_square(25))
 puts(is_perfect_square(26))
 
-# time to run is x + 1 iterations
+# time to run is x + 1 iterations, where x is the square root of the input, rounded down
 
-# if number is perfect square
-#   x = square root of the number
-
-# if number is not a perfect square
-#   x = square root of the closest perfect square that is less than the number
+# time complexity
+# O(⌊√n⌋ + 1)
