@@ -15,3 +15,11 @@ puts(is_perfect_square(3))
 puts(is_perfect_square(4))
 puts(is_perfect_square(25))
 puts(is_perfect_square(26))
+
+# time to run is x + 1 iterations
+
+# if number is perfect square
+#   x = square root of the number
+
+# if number is not a perfect square
+#   x = square root of the closest perfect square that is less than the number
