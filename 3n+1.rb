@@ -1,5 +1,6 @@
 def cycle_length(i)
     output = 1
+
     while i != 1
         if i % 2 == 0
             i = i / 2
@@ -8,6 +9,7 @@ def cycle_length(i)
         end
         output += 1
     end
+
     return output
 end
 
