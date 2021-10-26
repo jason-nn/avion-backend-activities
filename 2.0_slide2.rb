@@ -1,8 +1,6 @@
 def min(arr)
     output = arr[0]
-    for i in arr
-        output = i if i < output
-    end
+    arr.each { |i| output = i if i < output }
     return output
 end
 

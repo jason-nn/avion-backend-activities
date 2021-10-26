@@ -4,9 +4,7 @@ arr = [1, 3, 5, 7, 9, 11]
 num = 3
 
 def appears(num, arr)
-    for i in arr
-        return true if i == num
-    end
+    arr.each { |i| return true if i == num }
     return false
 end
 
@@ -37,14 +35,12 @@ puts
 
 def get_even(arr)
     even = []
-    for i in arr
-        even.push(i) if i % 2 == 0
-    end
+    arr.each { |i| even.push(i) if i % 2 == 0 }
     return even
 end
 
 arr = [6, 3, 1, 8, 4, 2, 10, 65, 102]
-puts(get_even(arr))
+pp(get_even(arr))
 puts
 
 # ----- 3 ----- #

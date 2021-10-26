@@ -1,7 +1,5 @@
 sum = 0
 
-for i in 1...1000
-    sum += i if i % 3 == 0 || i % 5 == 0
-end
+(1...1000).each { |i| sum += i if i % 3 == 0 || i % 5 == 0 }
 
 puts sum

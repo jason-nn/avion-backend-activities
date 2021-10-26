@@ -3,9 +3,7 @@
 def sum_of_squares(i, j)
     output = 0
 
-    for k in i..j
-        output += k**2
-    end
+    (i..j).each { |k| output += k**2 }
 
     return output
 end
@@ -13,9 +11,7 @@ end
 def square_of_sum(i, j)
     output = 0
 
-    for k in i..j
-        output += k
-    end
+    (i..j).each { |k| output += k }
 
     output **= 2
 

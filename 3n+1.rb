@@ -16,9 +16,7 @@ end
 def maximum_cycle_length(i, j)
     output = 0
 
-    for k in i..j
-        output = cycle_length(k) if cycle_length(k) > output
-    end
+    (i..j).each { |k| output = cycle_length(k) if cycle_length(k) > output }
 
     return "#{i} #{j} #{output}"
 end
