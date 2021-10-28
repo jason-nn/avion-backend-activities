@@ -79,54 +79,37 @@ puts arwie.age
 
 class Duck
     def walks
-        'like a duck'
+        'walks like a duck'
     end
 
     def swims
-        'like a duck'
+        'swims like a duck'
     end
 
     def quacks
-        'like a duck'
+        'quacks like a duck'
     end
 end
 
-class Bird
+class Duck
     def walks
-        'like a duck'
+        'walks like a duck'
     end
 
     def swims
-        'like a duck'
+        'swims like a duck'
     end
 
     def quacks
-        'like a duck'
+        'quacks like a duck'
     end
 end
 
-class Animal
-    def walks(animal)
-        animal.walks
-    end
+ducks = [Duck.new, Bird.new]
 
-    def swims(animal)
-        animal.swims
-    end
-
-    def quacks(animal)
-        animal.quacks
-    end
+ducks.each do |duck|
+    puts
+    puts duck.walks
+    puts duck.swims
+    puts duck.quacks
 end
-
-puts
-
-puts Animal.new.walks(Duck.new)
-puts Animal.new.swims(Duck.new)
-puts Animal.new.quacks(Duck.new)
-
-puts
-
-puts Animal.new.walks(Bird.new)
-puts Animal.new.swims(Bird.new)
-puts Animal.new.quacks(Bird.new)
