@@ -91,7 +91,7 @@ class Duck
     end
 end
 
-class Duck
+class Bird
     def walks
         'walks like a duck'
     end
