@@ -62,3 +62,41 @@ select avg(age) from students;
 select * from students order by age desc;
 
 # ----- # ----- #
+
+create table students (
+    id integer PRIMARY KEY,
+    name character varying(50) NOT NULL,
+    course character varying(50) NOT NULL,
+    age integer NOT NULL
+);
+
+insert into students (id, name, course, age)
+values (1, 'Jason', '-', 20);
+
+insert into students (id, name, course, age)
+values (2, 'Jason30', '-', 30);
+
+insert into students (id, name, course, age)
+values (3, 'Jason40', '-', 40);
+
+insert into students (id, name, course, age)
+values (4, 'Jason50', '-', 50);
+
+insert into students (id, name, course, age)
+values (5, 'Jason60', '-', 60);
+
+select * from students order by age desc;
+
+select avg(age) from students;
+
+select * from students where age >= 25 and age <= 32;
+
+update students set course = 'Millenialogy' where age >= 25 and age <= 32;
+
+delete from students where age > 30;
+
+select name from students;
+
+select name, course from students where age < 20;
+
+# ----- # ----- #
