@@ -30,22 +30,22 @@ create table students (
 );
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (1, 'Juan', 'Blank', 'Cruz', 18, 'Manila');
+values (1, 'Juan', '-', 'Cruz', 18, 'Manila');
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (2, 'Anne', 'Blank', 'Wall', 20, 'Manila');
+values (2, 'Anne', '-', 'Wall', 20, 'Manila');
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (3, 'Theresa', 'Blank', 'Joseph', 21, 'Manila');
+values (3, 'Theresa', '-', 'Joseph', 21, 'Manila');
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (4, 'Isaac', 'Blank', 'Gray', 19, 'Laguna');
+values (4, 'Isaac', '-', 'Gray', 19, 'Laguna');
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (5, 'Zack', 'Blank', 'Matthews', 22, 'Marikina');
+values (5, 'Zack', '-', 'Matthews', 22, 'Marikina');
 
 insert into students (id, first_name, middle_name, last_name, age, location)
-values (6, 'Finn', 'Blank', 'Lam', 25, 'Manila');
+values (6, 'Finn', '-', 'Lam', 25, 'Manila');
 
 update students set first_name = 'Ivan', middle_name = 'Ingram', last_name='Howard', age = 25, location = 'Bulacan' where id = 1;
 
@@ -155,5 +155,51 @@ select l.name, i.first_name, i.last_name from lessons l left join instructors i 
 select l.name, i.first_name, i.last_name from lessons l right join instructors i on i.lesson_id = l.id;
 
 select l.name, i.first_name, i.last_name from lessons l full join instructors i on i.lesson_id = l.id;
+
+# ----- # ----- #
+
+create table classrooms (
+    id integer PRIMARY KEY,
+    student_id integer NOT NULL,
+    section character varying(1) NOT NULL
+);
+
+insert into classrooms (id, student_id, section)
+values (1, 192450, 'A');
+
+insert into classrooms (id, student_id, section)
+values (2, 192451, 'B');
+
+insert into classrooms (id, student_id, section)
+values (3, 192452, 'C');
+
+insert into classrooms (id, student_id, section)
+values (4, 192453, 'D');
+
+insert into classrooms (id, student_id, section)
+values (5, 192454, 'E');
+
+insert into classrooms (id, student_id, section)
+values (6, 192455, 'F');
+
+insert into classrooms (id, student_id, section)
+values (7, 192456, 'G');
+
+insert into classrooms (id, student_id, section)
+values (8, 192457, 'H');
+
+insert into classrooms (id, student_id, section)
+values (9, 192458, 'I');
+
+insert into classrooms (id, student_id, section)
+values (10, 192459, 'J');
+
+select c.student_id, c.section, s.first_name, s.last_name from classrooms c inner join students s on c.id = s.id;
+
+select c.student_id, c.section, s.first_name, s.last_name from classrooms c left join students s on c.id = s.id;
+
+select c.student_id, c.section, s.first_name, s.last_name from classrooms c right join students s on c.id = s.id;
+
+select c.student_id, c.section, s.first_name, s.last_name from classrooms c full join students s on c.id = s.id;
 
 # ----- # ----- #
