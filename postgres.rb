@@ -10,7 +10,7 @@ pg_stop
 
 createdb 'database_name'
 
-\c database_name
+\c avionschool_development
 
 \l
 
@@ -98,5 +98,62 @@ delete from students where age > 30;
 select name from students;
 
 select name, course from students where age < 20;
+
+# ----- # ----- #
+
+create table lessons (
+    id integer PRIMARY KEY,
+    name character varying(30) NOT NULL,
+    description character varying(30) NOT NULL,
+    front_end character varying(30) NOT NULL,
+    back_end character varying(30) NOT NULL,
+    price float NOT NULL
+);
+
+insert into lessons (id, name, description, front_end, back_end, price)
+values (1, 'Ruby', 'Ruby description', 'FALSE', 'TRUE', 199.99);
+
+insert into lessons (id, name, description, front_end, back_end, price)
+values (2, 'Python', 'Python description', 'FALSE', 'TRUE', 199.99);
+
+insert into lessons (id, name, description, front_end, back_end, price)
+values (3, 'Javascript', 'Javascript description', 'TRUE', 'TRUE', 99.99);
+
+insert into lessons (id, name, description, front_end, back_end, price)
+values (4, 'Rust', 'Rust description', 'FALSE', 'TRUE', 499.99);
+
+insert into lessons (id, name, description, front_end, back_end, price)
+values (5, 'Golang', 'Golang description', 'FALSE', 'TRUE', 499.99);
+
+
+create table instructors (
+    id integer PRIMARY KEY,
+    first_name character varying(30) NOT NULL,
+    last_name character varying(30) NOT NULL,
+    lesson_id integer NOT NULL
+);
+
+insert into instructors (id, first_name, last_name, lesson_id)
+values (1, 'Adrian', 'Co', 1);
+
+insert into instructors (id, first_name, last_name, lesson_id)
+values (2, 'Analyn', 'Cajocson', 1);
+
+insert into instructors (id, first_name, last_name, lesson_id)
+values (3, 'Pau', 'Rosa', 3);
+
+insert into instructors (id, first_name, last_name, lesson_id)
+values (4, 'Maurus', 'Vitor', 3);
+
+insert into instructors (id, first_name, last_name, lesson_id)
+values (5, 'John', 'Young', 6);
+
+select l.name, i.first_name, i.last_name from lessons l inner join instructors i on i.lesson_id = l.id;
+
+select l.name, i.first_name, i.last_name from lessons l left join instructors i on i.lesson_id = l.id;
+
+select l.name, i.first_name, i.last_name from lessons l right join instructors i on i.lesson_id = l.id;
+
+select l.name, i.first_name, i.last_name from lessons l full join instructors i on i.lesson_id = l.id;
 
 # ----- # ----- #
