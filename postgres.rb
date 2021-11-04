@@ -16,6 +16,8 @@ createdb 'database_name'
 
 \dt
 
+\d table_name
+
 select * from table_name;
 
 # ----- # ----- #
