@@ -1,4 +1,4 @@
-# ruby test.rb in terminal to run
+# ruby test.rb
 
 require 'test/unit'
 require './student.rb'
