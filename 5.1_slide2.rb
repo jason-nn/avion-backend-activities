@@ -30,3 +30,15 @@ puts string_incrementer('foobar23')
 puts string_incrementer('foo0042')
 puts string_incrementer('foo9')
 puts string_incrementer('foo099')
+
+puts '-----'
+
+def string_incrementer(str)
+    return str.split(/[1-9]/).first + (str.split(/[a-z]/).last.to_i + 1).to_s
+end
+
+puts string_incrementer('foo')
+puts string_incrementer('foobar23')
+puts string_incrementer('foo0042')
+puts string_incrementer('foo9')
+puts string_incrementer('foo099')
